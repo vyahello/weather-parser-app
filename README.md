@@ -4,11 +4,12 @@ A simple application written using flask framework that shows weather of a parti
 ## Run a weather parser application
 Execute next command in your shell
 ```bash
-~ python weather-parser-app.py
+~ export FLASK_APP=weather.py
+~ flask run
 ```
 
 ## Demo
-![Screenshot](coin/demo/fcbot.png)
+![Screenshot](server/demo/weather.png)
 
 ## Contributing
 
