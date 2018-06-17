@@ -1,6 +1,12 @@
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import Column
 from server import db
 
+_db: SQLAlchemy = db.synchronize()
 
-class City(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), nullable=False)
+
+class City(_db.Model):
+    """Represent particular city."""
+
+    id: Column = _db.Column(_db.Integer, primary_key=True)
+    name: Column = _db.Column(_db.String(50), nullable=False)

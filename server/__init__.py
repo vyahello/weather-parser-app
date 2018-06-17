@@ -1,6 +1,9 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from server.servers import WeatherApp
+from server.storage.db import SqlDB, DB
 
-weather = Flask(__name__)
-weather.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///weather.db'
-db = SQLAlchemy(weather)
+weather: Flask = WeatherApp()
+weather.configure()
+db: DB = SqlDB(weather)
+
+from server import routes
