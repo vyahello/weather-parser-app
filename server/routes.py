@@ -1,7 +1,10 @@
+from typing import List
+
 import requests
 from flask import request, render_template
 from server import weather, db
 from server.city import City
+from server.storage.sessions import ClientSession
 
 _root: str = '/'
 
@@ -15,15 +18,11 @@ _weather_template: str = 'weather.html'
 @weather.route(_root, methods=[_GET_METHOD, _POST_METHOD])
 def home():
     if request.method == _POST_METHOD:
-        new_city = request.form.get('city')
-
+        new_city: str = request.form.get('city')
         if new_city:
-            new_city_obj = City(name=new_city)
+            ClientSession(db, City(name=new_city)).add()
 
-            db.session.add(new_city_obj)
-            db.session.commit()
-
-    cities = City.query.all()
+    cities: List[City] = City.query.all()
 
     weather_data = []
 
