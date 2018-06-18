@@ -11,6 +11,10 @@ class Response(ABC):
         pass
 
     @abstractmethod
+    def content(self) -> str:
+        pass
+
+    @abstractmethod
     def json(self) -> Dict[Any, Any]:
         pass
 
@@ -29,6 +33,9 @@ class HttpResponse(Response):
 
     def status_code(self) -> int:
         return self._response.status_code
+
+    def content(self) -> bytes:
+        return self._response.content
 
     def json(self) -> Dict[Any, Any]:
         return self._response.json()
