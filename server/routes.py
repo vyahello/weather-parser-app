@@ -1,10 +1,10 @@
 from typing import List, Any
 import requests
-from flask import render_template
 from server import weather, db
 from server.city import City
 from server.storage.sessions import ClientSession
 from server.view.requests import Request, ViewRequest
+from server.view.templates import WeatherTemplate
 
 _root: str = '/'
 
@@ -38,4 +38,4 @@ def home():
 
         weather_data.append(forecast)
 
-    return render_template(_weather_template, weather_data=weather_data)
+    return WeatherTemplate(_weather_template).render(weather_data=weather_data)
