@@ -4,8 +4,7 @@ A simple application written using flask framework that shows weather of a parti
 ## Run a weather parser application
 Execute next command in your shell
 ```bash
-~ export FLASK_APP=weather.py
-~ flask run
+~ python weather.py 
 ```
 
 ## Demo
@@ -22,3 +21,6 @@ Execute next command in your shell
   ```
 - `python3.6` is required to run the code
 - run `pip install -r requirements.txt` to install all require python packages
+
+## Run auto tests
+- Run `pytest -v` from shell in the root directory of the repository.
