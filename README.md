@@ -8,7 +8,12 @@ Execute next command in your shell
 ```
 
 ## Demo
+### Get weather for particular cities
 ![Screenshot](server/demo/weather.png)
+
+### Add a city
+![Screenshot](server/demo/add_city.png)
+![Screenshot](server/demo/added_city.png)
 
 ## Contributing
 
