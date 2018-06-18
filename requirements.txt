@@ -1,6 +1,8 @@
 werkzeug
 sqlalchemy
 flask
+flask_sqlalchemy
+flask_sslify
 pytest
 urllib3
 requests
