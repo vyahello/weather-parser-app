@@ -1,5 +1,6 @@
 # Weather parser application
 A simple application written using flask framework that shows weather of a particular city.
+You can try direct hosting link of an app - [https://weatherfox.pythonanywhere.com/](https://weatherfox.pythonanywhere.com/). Enjoy it! 
 
 ## Run a weather parser application
 Execute next command in your shell
